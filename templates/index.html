@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Wine_Quality prediction </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-info">
+    <div class ="text-center text-white">
+        <h1>Predict your Wine Quality according to your environment</h1>
+    </div>
+
+    <div class="text-center text-white">
+    {% if prediction %}
+        <h4>Wine Quality(Grade):</h4>
+        <p class="fw-bold fs-4">{{ prediction }}</p>
+    {% else %}
+        <p>No prediction available.</p>
+    {% endif %}
+</div>
+
+
+    <div class="container "> 
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="fixed acidity" class="form-label text-white">Fixed Acidity:</label>
+                <input type="text" id="fixed acidity" class="form-control" name="fixed acidity" required>
+            </div>
+            <div class="mb-3">
+                <label for="volatile acidity" class="form-label text-white">Volatile Acidity:</label>
+                <input type="text" id="volatile acidity" class="form-control" name="volatile acidity" required>
+            </div>
+            <div class="mb-3">
+                <label for="citric acid" class="form-label text-white">Citric Acid:</label>
+                <input type="text" id="citric acid" class="form-control" name="citric acid" required>
+            </div>
+            <div class="mb-3">
+                <label for="residual sugar" class="form-label text-white">Residual Sugar:</label>
+                <input type="text" id="residual sugar" class="form-control" name="residual sugar" required>
+            </div>
+            <div class="mb-3">
+                <label for="chlorides" class="form-label text-white">Chlorides:</label>
+                <input type="text" id="chlorides" class="form-control" name="chlorides" required>
+            </div>
+            <div class="mb-3">
+                <label for="free sulfur dioxide" class="form-label text-white">Free Sulfur Dioxide:</label>
+                <input type="text" id="free sulfur dioxide" class="form-control" name="free sulfur dioxide" required>
+            </div>
+            <div class="mb-3">
+                <label for="total sulfur dioxide" class="form-label text-white">Total Sulfur Dioxide:</label>
+                <input type="text" id="total sulfur dioxide" class="form-control" name="total sulfur dioxide" required>
+            </div>
+            <div class="mb-3">
+                <label for="density" class="form-label text-white">Density:</label>
+                <input type="text" id="density" class="form-control" name="density" required>
+            </div>
+            <div class="mb-3">
+                <label for="pH" class="form-label text-white">pH:</label>
+                <input type="text" id="pH" class="form-control" name="pH" required>
+            </div>
+            <div class="mb-3">
+                <label for="sulphates" class="form-label text-white">Sulphates:</label>
+                <input type="text" id="sulphates" class="form-control" name="sulphates" required>
+            </div>
+            <div class="mb-3">
+                <label for="alcohol" class="form-label text-white">Alcohol:</label>
+                <input type="text" id="alcohol" class="form-control" name="alcohol" required>
+            </div>
+            
+            <div>
+                <button type="submit" class="btn btn-light"> predict Wine Quality</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
