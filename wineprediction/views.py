@@ -33,8 +33,10 @@ def home(request):
     context = {
         "prediction" : pred
     }
-    return render(request, "index.html", context)
+    return render(request, "home.html", context)
 
+def index(request):
+    return render(request, "index.html")
 def about(request):
     return HttpResponse("this is a About Page")
 
